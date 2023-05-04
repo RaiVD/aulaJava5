@@ -2,25 +2,21 @@ import java.util.Scanner;
 
 public class Exercicio2 {
     public static void main(String[] args) {
-        System.out.println("Digite uma palavra: ");
         Scanner palavra = new Scanner(System.in);
+        System.out.println("Digite uma palavra: ");
+        String str= palavra.nextLine();
 
-        String palavras= palavra.nextLine();
-        System.out.println(verificar(palavras));
+        System.out.println(verificar(str));
     }
-    public static boolean verificar(String str) {
+    public static boolean verificar(String input) {
 
         String vogais = "a,e,i,o,u";
-        String consoantes = "b,c,d,f,g,h,j,k,l,m,n,p,q,r,s,t,v,w,x,w,z";
+        String teste = input.toLowerCase();
 
-        for (int i = 0; i<0; i++) {
-
-            if (str == vogais) {
+        for (int i = 0; i<teste.length(); i++) {
+            if (vogais.indexOf(teste.charAt(i)) == -1); {
                 return true;
-            } else if (str == consoantes+vogais) {
-                return false;
             }
-
         }
         return false;
     }
